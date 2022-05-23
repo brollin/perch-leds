@@ -10,7 +10,7 @@ class Pattern:
             self.initialize()
 
     def initialize(self):
-        finished = False
+        self.finished = False
 
     def progress(self):
         pass

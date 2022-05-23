@@ -2,7 +2,7 @@ import board
 import neopixel
 
 class PixelConfig:
-    # frames per second
+    # frames per second. this is an upper bound since pattern computation time will only lower fps
     fps = 30
 
     # total number of LEDs

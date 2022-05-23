@@ -29,6 +29,7 @@ while True:
     # advance frames, pattern if necessary
     frames = (frames + 1) % (pattern.duration * pixel_config.fps)
     if frames == 0 or pattern.finished:
+        frames = 0
         pattern_index = (pattern_index + 1) % len(patterns)
         pattern = patterns[pattern_index]
         pattern.initialize()

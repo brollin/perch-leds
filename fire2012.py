@@ -51,7 +51,7 @@ def heat_color(temperature):
         return 255, heatramp, 0
     else:
         # Hottest third: full red, full green, ramp up blue
-        heatramp = lerp(temperature, 170, 255, 0, 100)
+        heatramp = lerp(temperature, 170, 255, 0, 50)
         return 255, 255, heatramp
 
 

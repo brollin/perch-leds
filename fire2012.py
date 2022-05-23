@@ -56,8 +56,8 @@ def heat_color(temperature):
 
 
 class Fire2012(Pattern):
-    def __init__(self, pixel_config) -> None:
-        super().__init__(pixel_config)
+    def initialize(self):
+        super().initialize()
 
         # Array of temperature readings at each simulation cell. The fire starts unlit.
         # Values should be from 0 to 255

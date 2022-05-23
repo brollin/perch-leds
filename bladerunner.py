@@ -1,20 +1,20 @@
-import math
 from pattern import Pattern
-from util import lerp3
+from util import lerp3, random_sin_cycler
 
 BLUE = (43, 174, 140)
 ORANGE = (231, 50, 1)
 
 class Bladerunner(Pattern):
-    frame = 0
-    def __init__(self, pixel_config) -> None:
-        super().__init__(pixel_config)
+    def initialize(self):
+        super().initialize()
+
+        self.start_cycler = random_sin_cycler(60, 200)
+        self.stop_cycler = random_sin_cycler(60, 200)
 
     def progress(self):
         count = self.pixel_config.count
-        self.frame = (self.frame + 1) % 200
-        start = round(count * 0.3) + round(count * 0.2) * math.sin(self.frame * 2 * math.pi / 100)
-        stop = round(count * 0.7) + round(count * 0.2) * math.cos(self.frame * 2 * math.pi / 200)
+        start = round(count * 0.15) + round(count * 0.3) * next(self.start_cycler)
+        stop = round(count * 0.85) + round(count * 0.3) * next(self.stop_cycler)
 
         for i in range(count):
             if i < start:

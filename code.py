@@ -22,6 +22,12 @@ pixel_config = PixelConfig()
 fire2012 = Fire2012(pixel_config)
 bladerunner = Bladerunner(pixel_config)
 
+# flash blue as indication of reset
+for i in range(pixel_config.count):
+    pixel_config.pixels[i] = (50, 125, 200)
+pixel_config.pixels.show()
+time.sleep(1)
+
 while True:
     bladerunner.progress()
     # fire2012.progress()

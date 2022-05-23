@@ -32,10 +32,10 @@ def random_sin_cycler(min, max):
         cycle_x, cycle_max = next(cycler)
         yield math.sin(2 * math.pi * cycle_x / cycle_max)
 
-def dim(pixel):
+def dim(pixel, amount):
     """
     Dim a pixel
     """
     def dim_color(color):
-        return max(color - 10, 0)
+        return max(color - amount, 0)
     return dim_color(pixel[0]), dim_color(pixel[1]), dim_color(pixel[2])

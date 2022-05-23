@@ -2,11 +2,13 @@ import board
 import neopixel
 
 class PixelConfig:
-    # frames per second. this is an upper bound since pattern computation time will only lower fps
-    fps = 30
+    # frames per second. this is an upper bound since pattern computation time will only lower fps.
+    # this can be overridden by patterns
+    default_fps = 30
 
     # total number of LEDs
-    count = 120
+    count = 150
+
     def __init__(self) -> None:
         self.pixels = neopixel.NeoPixel(
             board.GP0,

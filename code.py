@@ -22,18 +22,18 @@ patterns = [
 for i in range(len(patterns), 0, -1):
     patterns.insert(i, Fadeout(pixel_config))
 
-frames = 0
+pattern_frame = 0
 pattern_index = 0
 pattern = patterns[pattern_index]
 while True:
-    # advance frames, pattern if necessary
-    frames = (frames + 1) % (pattern.duration * pixel_config.fps)
-    if frames == 0 or pattern.finished:
-        frames = 0
+    # advance pattern frame, pattern if necessary
+    pattern_frame = (pattern_frame + 1) % (pattern.duration * pattern.fps)
+    if pattern_frame == 0 or pattern.finished:
+        pattern_frame = 0
         pattern_index = (pattern_index + 1) % len(patterns)
         pattern = patterns[pattern_index]
         pattern.initialize()
 
     pattern.progress()
     pixel_config.pixels.show()
-    time.sleep(1 / pixel_config.fps)
+    time.sleep(1 / pattern.fps)

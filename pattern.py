@@ -15,3 +15,7 @@ class Pattern:
 
     def progress(self):
         pass
+
+    @property
+    def total_frames(self):
+        return self.duration * self.fps

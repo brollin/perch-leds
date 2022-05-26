@@ -1,6 +1,6 @@
 class Pattern:
     # duration in seconds that pattern should run for
-    duration = 4
+    duration = 40
 
     # when this boolean is true, pattern will be advanced regardless of duration shown
     finished = False
@@ -14,7 +14,7 @@ class Pattern:
         self.finished = False
 
     def progress(self):
-        pass
+        raise NotImplemented
 
     @property
     def total_frames(self):

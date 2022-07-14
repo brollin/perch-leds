@@ -7,6 +7,14 @@ A personal LED project. Enjoy :)
 - Raspberry Pi Pico (CircuitPython firmware)
 - WS2812B LEDs
 
+## Development
+
+Convenience script to copy python files to circuit python volume:
+
+```zsh
+./transfer
+```
+
 ## To do
 
 - Rather than fade out, do an interpolation between last frame of last pattern and first frame of next pattern

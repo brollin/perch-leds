@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+cp *.py /Volumes/CIRCUITPY/
+echo 'Transfer complete'

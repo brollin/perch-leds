@@ -3,7 +3,6 @@ from bladerunner import Bladerunner
 from fire2012 import Fire2012
 from fadeout import Fadeout
 from pixelconfig import PixelConfig
-from ripple import Ripple
 from tron import Tron
 
 pixel_config = PixelConfig()
@@ -16,7 +15,6 @@ time.sleep(0.5)
 
 # list of patterns to cycle through
 patterns = [
-    # Ripple(pixel_config),
     Tron(pixel_config),
     Bladerunner(pixel_config),
     Fire2012(pixel_config),

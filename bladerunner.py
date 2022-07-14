@@ -1,6 +1,7 @@
 from pattern import Pattern
 from util import lerp3, random_sin_cycler
 
+BLACK = (0, 0, 0)
 BLUE = (43, 174, 140)
 ORANGE = (231, 50, 1)
 
@@ -8,6 +9,7 @@ class Bladerunner(Pattern):
     def initialize(self):
         super().initialize()
 
+        self.faded_in_percent = 0
         self.start_cycler = random_sin_cycler(60, 200)
         self.stop_cycler = random_sin_cycler(60, 200)
 
@@ -23,3 +25,9 @@ class Bladerunner(Pattern):
                 self.pixel_config.pixels[i] = lerp3(i, start, stop, BLUE, ORANGE)
             else:
                 self.pixel_config.pixels[i] = ORANGE
+
+        # slowly fade in as the pattern is progressing over 100 frames
+        if self.faded_in_percent < 100:
+            self.faded_in_percent += 1
+            for i, pixel in enumerate(self.pixel_config.pixels):
+                    self.pixel_config.pixels[i] = lerp3(self.faded_in_percent, 0, 100, BLACK, pixel)

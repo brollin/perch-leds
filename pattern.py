@@ -1,6 +1,6 @@
 class Pattern:
     # duration in seconds that pattern should run for
-    duration = 40
+    duration = 60 * 10
 
     # when this boolean is true, pattern will be advanced regardless of duration shown
     finished = False

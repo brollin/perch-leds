@@ -5,7 +5,8 @@ A personal LED project. Enjoy :)
 ## Hardware
 
 - Raspberry Pi Pico (CircuitPython firmware)
-- WS2812B LEDs
+- WS2812B LEDs (GPIO pin 0)
+- Hardware button (GPIO pin 1)
 
 ## Development
 

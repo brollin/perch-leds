@@ -1,5 +1,6 @@
 import board
 import neopixel
+import digitalio
 
 class PixelConfig:
     # frames per second. this is an upper bound since pattern computation time will only lower fps.
@@ -17,3 +18,7 @@ class PixelConfig:
             brightness=0.3,
             pixel_order=neopixel.GRB
         )
+
+        # belongs somewhere more logical
+        self.button = digitalio.DigitalInOut(board.GP1)
+        self.button.switch_to_input(pull=digitalio.Pull.DOWN)

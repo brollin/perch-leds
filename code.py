@@ -26,9 +26,17 @@ for i in range(len(patterns), 0, -1):
 
 pattern_index = 0
 pattern = patterns[pattern_index]
+
+button_down_frames = 0
 while True:
     # display frames of pattern until finished
     for _ in range(pattern.total_frames):
+        if pixel_config.button.value:
+            button_down_frames += 1
+        elif button_down_frames > 0:
+            button_down_frames = 0
+            pattern.finished = True
+
         if pattern.finished:
             break
 
